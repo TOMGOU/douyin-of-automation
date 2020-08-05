@@ -1,0 +1,3 @@
+translate==3.5.0
+selenium==3.141.0
+translation==1.0.5
