@@ -1,7 +1,13 @@
 from translate import Translator
 import os 
 
-translator= Translator(to_lang="chinese")
+# translator= Translator(from_lang="chinese",to_lang="english")
+# translator= Translator(from_lang="english",to_lang="chinese")
+# translator= Translator(from_lang="english",to_lang="japanese")
+# translator= Translator(from_lang="english",to_lang="korean")
+# translator= Translator(from_lang="english",to_lang="french")
+# translator= Translator(from_lang="english",to_lang="russian")
+translator= Translator(from_lang="chinese",to_lang="spanish")
 
 def rename_file(file_dir):   
   L = [] 
