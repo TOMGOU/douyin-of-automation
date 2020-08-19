@@ -26,8 +26,8 @@ def isElementExist(browser, element):
     return flag
 
 option = webdriver.ChromeOptions()
-option.add_argument(r'user-data-dir=/Users/tangyong/Library/Application Support/Google/Chrome')
-browser = webdriver.Chrome(chrome_options=option, executable_path='/Users/tangyong/Application/chromedriver')
+option.add_argument(r'user-data-dir=C:\Users\zhuan\AppData\Local\Google\Chrome\User Data')
+browser = webdriver.Chrome(chrome_options=option)
 # browser = webdriver.Chrome(executable_path='/Users/tangyong/Application/chromedriver')
 # browser = webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
 browser.get('https://creator.douyin.com/content/upload')
@@ -39,7 +39,7 @@ if exiting:
   button.click()
   print('请扫码登录！')
 
-upload_file = file_name(r'/Users/tangyong/test/automation/douyin-of-automation/videos')
+upload_file = file_name(r'C:\demo\02_SUMMARY\29_automation\douyin-of-automation\videos') 
 
 total_num = len(upload_file['file_name'])
 

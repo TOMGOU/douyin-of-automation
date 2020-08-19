@@ -5,18 +5,32 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 def isVideoLong(string, times):
+<<<<<<< HEAD
   time_list = string.split(':')
   length = len(time_list)
   video_time = 0
   if length == 1:
     return False
+=======
+  if string == 'LIVE' or string == '':
+    return False
+  time_list = string.split(':')
+  print(time_list)
+  length = len(time_list)
+  video_time = 0
+  if length == 1:
+    video_time = int(time_list[0])
+>>>>>>> add: you-get
   elif length == 2:
     video_time = int(time_list[0]) * 60 + int(time_list[1])
   else:
     video_time = int(time_list[0]) * 60 * 60 + int(time_list[1]) * 60 + int(time_list[2])
   return video_time < times * 60
 
-browser = webdriver.Chrome(executable_path='/Users/tangyong/Application/chromedriver')
+option = webdriver.ChromeOptions()
+option.add_argument(r'user-data-dir=C:\Users\zhuan\AppData\Local\Google\Chrome\User Data')
+option.add_argument('--ignore-certificate-errors')
+browser = webdriver.Chrome(chrome_options=option)
 
 #  新开一个窗口，通过执行js来新开一个窗口
 # js='window.open("https://www.youtube.com/");'
@@ -24,10 +38,15 @@ browser = webdriver.Chrome(executable_path='/Users/tangyong/Application/chromedr
 browser.get('https://www.youtube.com/')
 # input = browser.find_element_by_id('search-input')
 # input.click()
+<<<<<<< HEAD
 browser.find_element_by_xpath('//input').send_keys('频道：NBA')
+=======
+browser.find_element_by_xpath('//input').send_keys('NBA')
+>>>>>>> add: you-get
 search = browser.find_element_by_id('search-icon-legacy')
 search.click()
-main_link = browser.find_element_by_id('main-link')
+time.sleep(5)
+main_link = browser.find_elements_by_id('main-link')[0]
 main_link.click()
 time.sleep(5)
 # video = browser.find_element_by_xpath('//div[contains(text(),"视频")]')
@@ -35,6 +54,7 @@ video = browser.find_elements_by_class_name('paper-tab')[1]
 # print('video:', video)
 video.click()
 time.sleep(10)
+<<<<<<< HEAD
 # order = browser.find_element_by_xpath('//div[text()="排序方式"]')
 # order = browser.find_element_by_link_text('排序方式')
 # order = browser.find_elements_by_class_name('yt-sort-filter-sub-menu-renderer')[0]
@@ -56,9 +76,21 @@ for index in range(total_num_element):
   print(index, time_str, target_url)
   if isVideoLong(time_str, 15) and target_url != None:
     url_list.append(target_url)
+=======
+total_num_element = len(browser.find_elements_by_id('thumbnail'))
+time_elements = browser.find_elements_by_xpath('//*[@id="thumbnail"]/*[@id="overlays"]/ytd-thumbnail-overlay-time-status-renderer/span')
+url_list = []
+for index in range(total_num_element):
+  if (index < 30):
+    time_str = time_elements[index].get_attribute('textContent').strip()
+    print(time_str)
+    target = browser.find_elements_by_id('thumbnail')[index]
+    target_url = target.get_attribute("href")
+    if isVideoLong(time_str, 15) and target_url != None:
+      url_list.append(target_url)
+>>>>>>> add: you-get
 
 total_num_video = len(url_list)
-
 print('已经爬到的视频个数:', total_num_video)
 print('链接地址如下:', url_list)
 

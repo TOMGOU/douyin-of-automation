@@ -42,7 +42,7 @@ def rename_file(file_dir):
   for root, dirs, files in os.walk(file_dir):
     length = len(files)
     for file in files: 
-      if os.path.splitext(file)[1] == '.mp4': 
+      if os.path.splitext(file)[1] == '.mp4' or os.path.splitext(file)[1] == '.webm': 
         print('当前翻译进度：', str(index) +'/' + str(length))
         index = index + 1
         name_original = os.path.splitext(file)[0]
@@ -56,6 +56,6 @@ def rename_file(file_dir):
   return L
 
 start = time.time()
-rename_file(r'/Users/tangyong/test/automation/douyin-of-automation/videos')
+rename_file(r'C:\demo\02_SUMMARY\29_automation\douyin-of-automation\videos')
 end = time.time()
 print(end - start)
