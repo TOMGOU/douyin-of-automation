@@ -25,7 +25,7 @@ def trans(q):
   msign = m.hexdigest() # 得到原始签名的MD5值
   data = {
   'q': q,
-  'from': 'spa',
+  'from': 'en',
   'to': 'zh',
   'appid': appid,
   'salt': salt,
@@ -56,6 +56,6 @@ def rename_file(file_dir):
   return L
 
 start = time.time()
-rename_file(r'/Users/tangyong/test/douyin/videos')
+rename_file(r'/Users/tangyong/test/automation/douyin-of-automation/videos')
 end = time.time()
 print(end - start)

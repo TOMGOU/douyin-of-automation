@@ -13,7 +13,7 @@ browser = webdriver.Chrome(executable_path='/Users/tangyong/Application/chromedr
 browser.get('https://www.youtube.com/')
 # input = browser.find_element_by_id('search-input')
 # input.click()
-browser.find_element_by_xpath('//input').send_keys('data is beautiful')
+browser.find_element_by_xpath('//input').send_keys('Motion Station')
 search = browser.find_element_by_id('search-icon-legacy')
 search.click()
 main_link = browser.find_element_by_id('main-link')

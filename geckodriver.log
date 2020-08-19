@@ -1,0 +1,81 @@
+1596940985709	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4b/l2lmvgzn5m98ns4k9r8br7280000gn/T/rust_mozprofileLEh1MV"
+1596940988648	Marionette	INFO	Listening on port 49854
+1596940988724	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript error: https://s3a.pstatp.com/ies/longvideo_fe/index.52ac2fa6.js, line 1: TypeError: e is undefined
+JavaScript error: https://s3a.pstatp.com/ies/longvideo_fe/index.52ac2fa6.js, line 1: TypeError: e is undefined
+JavaScript error: , line 0: uncaught exception: Object
+1596941087310	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4b/l2lmvgzn5m98ns4k9r8br7280000gn/T/rust_mozprofile50lO44"
+1596941093042	Marionette	INFO	Listening on port 50389
+1596941093140	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/NetworkGeolocationProvider.jsm, line 555: TypeError: xhr.response.location is undefined
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript error: https://s3a.pstatp.com/ies/longvideo_fe/index.52ac2fa6.js, line 1: ReferenceError: dll is not defined
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+1596941274511	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4b/l2lmvgzn5m98ns4k9r8br7280000gn/T/rust_mozprofileYno09d"
+1596941276722	Marionette	INFO	Listening on port 50745
+1596941276779	Marionette	WARN	TLS certificate errors will be ignored for this session
+1596941339684	Marionette	INFO	Stopped listening on port 50745
+1596941349420	Marionette	INFO	Stopped listening on port 50389
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+JavaScript warning: https://s3a.pstatp.com/ies/longvideo_fe/common/vendor.4f332a2f.js, line 298: unreachable code after return statement
+1596946841552	Marionette	INFO	Stopped listening on port 49854
+1596957237608	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4b/l2lmvgzn5m98ns4k9r8br7280000gn/T/rust_mozprofilepRxwTZ"
+1596957241110	Marionette	INFO	Listening on port 52590
+1596957241134	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+DOMException
+  - prototype DOMException
+    - ABORT_ERR = 20
+    - DATA_CLONE_ERR = 25
+    - DOMSTRING_SIZE_ERR = 2
+    - HIERARCHY_REQUEST_ERR = 3
+    - INDEX_SIZE_ERR = 1
+    - INUSE_ATTRIBUTE_ERR = 10
+    - INVALID_ACCESS_ERR = 15
+    - INVALID_CHARACTER_ERR = 5
+    - INVALID_MODIFICATION_ERR = 13
+    - INVALID_NODE_TYPE_ERR = 24
+    - INVALID_STATE_ERR = 11
+    - NAMESPACE_ERR = 14
+    - NETWORK_ERR = 19
+    - NOT_FOUND_ERR = 8
+    - NOT_SUPPORTED_ERR = 9
+    - NO_DATA_ALLOWED_ERR = 6
+    - NO_MODIFICATION_ALLOWED_ERR = 7
+    - QUOTA_EXCEEDED_ERR = 22
+    - SECURITY_ERR = 18
+    - SYNTAX_ERR = 12
+    - TIMEOUT_ERR = 23
+    - TYPE_MISMATCH_ERR = 17
+    - URL_MISMATCH_ERR = 21
+    - VALIDATION_ERR = 16
+    - WRONG_DOCUMENT_ERR = 4
+    - code = 20
+    - columnNumber = 0
+    - data = null
+    - filename = 
+    - lineNumber = 0
+    - location = null
+    - message = The operation was aborted. 
+    - name = AbortError
+    - result = 2152923156
+    - stack = 
+  - prototype Error
+  - prototype Object
+console.warn: services.settings: security-state/onecrl sync interrupted by shutdown
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+1596957949736	Marionette	INFO	Stopped listening on port 52590
+1597311200015	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/4b/l2lmvgzn5m98ns4k9r8br7280000gn/T/rust_mozprofile8BjzXy"
+1597311205042	Marionette	INFO	Listening on port 59013
+1597311205098	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597311278176	Marionette	INFO	Stopped listening on port 59013
