@@ -44,6 +44,8 @@ upload_file = file_name(r'/Users/tangyong/test/automation/douyin-of-automation/v
 total_num = len(upload_file['file_name'])
 
 for index in range(total_num):
+  # if index < 0:
+  #   continue
   print('视频上传进度:', index + 1, '/', total_num)
   WebDriverWait(browser, 300).until(EC.visibility_of_element_located((By.XPATH,'//*[contains(text(),"发布视频") and @class="semi-navigation-item-text"]')))
   
@@ -63,19 +65,30 @@ for index in range(total_num):
   title_input =  browser.find_element_by_xpath('//div[contains(@class, "public-DraftStyleDefault-block")]/span')
   title_input.send_keys(upload_file['file_name'][index][0:39])
 
-  category_select = browser.find_element_by_class_name('select-value--3XRKF')
-  category_select.click()
+  # title_name = browser.find_element_by_class_name('content-mytitle--35JFG')
+  # title_name.click()
 
-  knowledge = browser.find_element_by_xpath('//*[contains(text(),"体育")]')
-  knowledge.click()
+  if isElementExist(browser, '.select-value--3XRKF'):
+    category_select = browser.find_element_by_class_name('select-value--3XRKF')
+    category_select.click()
+    knowledge = browser.find_element_by_xpath('//*[contains(text(),"体育")]')
+    knowledge.click()
 
   timing = browser.find_elements_by_class_name('one-line--3sqFc')[1]
   timing.click()
   
   dist_time = browser.find_element_by_class_name('semi-input-default')
-  time_stamp = datetime.datetime.now() + datetime.timedelta(hours = index * 2)
-  dist_time.send_keys(time_stamp.strftime('%Y.%m.%d %H:%M'))
-
+  time.sleep(1)
+  time_stamp = datetime.datetime.now() + datetime.timedelta(hours = index * 4 + 4)
+  # dist_time.send_keys(time_stamp.strftime('%Y-%m-%d %H:%M'))
+  dist_date_time = time_stamp.strftime('%Y-%m-%d %H:%M')
+  print(dist_date_time)
+  val_str = 'document.getElementsByClassName("semi-input-default")[0].readonly=false'
+  ex_str = 'document.getElementsByClassName("semi-input-default")[0].value="' + dist_date_time + '"'
+  browser.execute_script(val_str)
+  browser.execute_script(ex_str)
+  time.sleep(1)
+  
   distribute = browser.find_element_by_xpath('//button[contains(text(),"发布")]')
   distribute.click()
   time.sleep(2)
@@ -88,3 +101,4 @@ for index in range(total_num):
     time.sleep(5)
     close_icon = browser.find_element_by_class_name('icon--3ap82')
     close_icon.click()
+browser.quit()
