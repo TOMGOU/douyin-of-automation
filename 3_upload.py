@@ -43,6 +43,7 @@ upload_file = file_name(r'/Users/tangyong/test/automation/douyin-of-automation/v
 
 total_num = len(upload_file['file_name'])
 
+index_int = 0
 for index in range(total_num):
   # if index < 0:
   #   continue
@@ -79,14 +80,34 @@ for index in range(total_num):
   
   dist_time = browser.find_element_by_class_name('semi-input-default')
   time.sleep(1)
-  time_stamp = datetime.datetime.now() + datetime.timedelta(hours = index * 4 + 4)
-  # dist_time.send_keys(time_stamp.strftime('%Y-%m-%d %H:%M'))
-  dist_date_time = time_stamp.strftime('%Y-%m-%d %H:%M')
-  print(dist_date_time)
-  val_str = 'document.getElementsByClassName("semi-input-default")[0].readonly=false'
-  ex_str = 'document.getElementsByClassName("semi-input-default")[0].value="' + dist_date_time + '"'
-  browser.execute_script(val_str)
-  browser.execute_script(ex_str)
+  time_stamp = datetime.datetime.now() + datetime.timedelta(hours = 1 * index + 2.1)
+  hours = int(time_stamp.strftime('%H'))
+  if hours > 23 or hours < 9:
+    gap = (32 - hours) % 24
+    index_add = index_int % 8
+    time_stamp = datetime.datetime.now() + datetime.timedelta(hours = 1 * index + 2.1 + gap + index_add * 0.3)
+    index_int = index_int + 1
+  # time_stamp = datetime.datetime.now() + datetime.timedelta(hours = index * 4 + 3)
+  month_time = time_stamp.strftime('%m')
+  day_time = time_stamp.strftime('%d')
+  hour_time = time_stamp.strftime('%H')
+  minute_time = time_stamp.strftime('%M')
+  current_month = datetime.datetime.now().strftime('%m')
+  print('预定的发布时间：' + time_stamp.strftime('%Y-%m-%d %H:%M'))
+  dist_time.click()
+  time.sleep(2)
+  if month_time != current_month:
+    next_month = browser.find_elements_by_class_name('semi-button semi-button-primary semi-button-borderless semi-button-with-icon just-icon')[1]
+    next_month.click()
+  time_dom = browser.find_elements_by_class_name('semi-datepicker-switch-text')
+  time_dom[0].click()
+  target_day = browser.find_element_by_xpath('//div[@class="semi-datepicker-day-main"]/span[text()="' + day_time + '"]')
+  target_day.click()
+  time_dom[1].click()
+  target_hour = browser.find_element_by_xpath('//div[@class="semi-scrolllist-item-wheel undefined-list-hour"]/div[@class="semi-scrolllist-list-outer"]/ul/li[contains(text(),"' + hour_time + '")]')
+  target_hour.click()
+  target_minute = browser.find_element_by_xpath('//div[@class="semi-scrolllist-item-wheel undefined-list-minute"]/div[@class="semi-scrolllist-list-outer"]/ul/li[contains(text(),"' + minute_time + '")]')
+  target_minute.click()
   time.sleep(1)
   
   distribute = browser.find_element_by_xpath('//button[contains(text(),"发布")]')
@@ -101,4 +122,4 @@ for index in range(total_num):
     time.sleep(5)
     close_icon = browser.find_element_by_class_name('icon--3ap82')
     close_icon.click()
-browser.quit()
+# browser.quit()

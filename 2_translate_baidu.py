@@ -49,7 +49,7 @@ def rename_file(file_dir):
         name_translated = trans(os.path.splitext(file)[0]).rstrip()
 
         postfix = os.path.splitext(file)[1]
-        os.rename(os.path.join(root, name_original + postfix), os.path.join(root, name_translated + postfix))
+        os.rename(os.path.join(root, name_original + postfix), os.path.join(root, name_translated + ' #篮球' + postfix))
         L.append(name_translated + postfix)
   # print(L)
   print('翻译总览：' + str(index - 1) + '个文件已翻译完成，其中' + str(length - index + 1) + '个文件为非MP4文件',) 
