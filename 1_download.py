@@ -18,8 +18,9 @@ def isVideoLong(string, times):
 
 option = webdriver.ChromeOptions()
 option.add_argument(r'user-data-dir=C:\Users\zhuan\AppData\Local\Google\Chrome\User Data')
-option.add_argument('--ignore-certificate-errors')
-browser = webdriver.Chrome(chrome_options=option)
+# option.add_argument('--ignore-certificate-errors')
+# browser = webdriver.Chrome(chrome_options=option)
+browser = webdriver.Chrome()
 
 #  新开一个窗口，通过执行js来新开一个窗口
 # js='window.open("https://www.youtube.com/");'
@@ -27,7 +28,7 @@ browser = webdriver.Chrome(chrome_options=option)
 browser.get('https://www.youtube.com/')
 # input = browser.find_element_by_id('search-input')
 # input.click()
-browser.find_element_by_xpath('//input').send_keys('频道：NBA')
+browser.find_element_by_xpath('//input').send_keys('频道：Motion Station')
 search = browser.find_element_by_id('search-icon-legacy')
 search.click()
 time.sleep(5)

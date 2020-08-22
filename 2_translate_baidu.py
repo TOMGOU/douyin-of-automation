@@ -14,6 +14,8 @@ import os
 import requests
 import time
 import hashlib
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def trans(q):
   key = "C4_azdaSXSfteFdUHZey"
@@ -29,7 +31,8 @@ def trans(q):
   'to': 'zh',
   'appid': appid,
   'salt': salt,
-  'sign': msign
+  'sign': msign,
+  'verify': False
   }
   url = "https://fanyi-api.baidu.com/api/trans/vip/translate"
   r = requests.get(url,params=data)

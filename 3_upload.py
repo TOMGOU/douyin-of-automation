@@ -66,9 +66,6 @@ for index in range(total_num):
   title_input =  browser.find_element_by_xpath('//div[contains(@class, "public-DraftStyleDefault-block")]/span')
   title_input.send_keys(upload_file['file_name'][index][0:39])
 
-  # title_name = browser.find_element_by_class_name('content-mytitle--35JFG')
-  # title_name.click()
-
   if isElementExist(browser, '.select-value--3XRKF'):
     category_select = browser.find_element_by_class_name('select-value--3XRKF')
     category_select.click()
@@ -87,7 +84,6 @@ for index in range(total_num):
     index_add = index_int % 8
     time_stamp = datetime.datetime.now() + datetime.timedelta(hours = 1 * index + 2.1 + gap + index_add * 0.3)
     index_int = index_int + 1
-  # time_stamp = datetime.datetime.now() + datetime.timedelta(hours = index * 4 + 3)
   month_time = time_stamp.strftime('%m')
   day_time = time_stamp.strftime('%d')
   hour_time = time_stamp.strftime('%H')
