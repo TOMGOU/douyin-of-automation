@@ -55,7 +55,7 @@ def rename_file(file_dir):
         os.rename(os.path.join(root, name_original + postfix), os.path.join(root, name_translated + ' #篮球' + postfix))
         L.append(name_translated + postfix)
   # print(L)
-  print('翻译总览：' + str(index - 1) + '个文件已翻译完成，其中' + str(length - index + 1) + '个文件为非MP4文件',) 
+  print('翻译总览：' + str(index - 1) + '个文件已翻译完成，其中' + str(length - index + 1) + '个文件为非视频文件',) 
   return L
 
 start = time.time()
