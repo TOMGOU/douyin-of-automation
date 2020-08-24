@@ -16,8 +16,8 @@ import time
 import hashlib
 
 def trans(q):
-  key = "C4_azdaSXSfteFdUHZey"
-  appid = '20200808000537597'
+  key = "C4_azdaSXSfteFdUHZeyTommy"
+  appid = '20200808000537597123'
   salt = str(time.time())
   sign = appid + q + salt + key
   m = hashlib.new("md5")  
